@@ -1,0 +1,70 @@
+<h1 id="journal-summary-time-sequence-data">Journal-Summary-Time-Sequence-Data</h1>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(gridExtra)
+df =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.dropbox.com/s/lmfndjlvqbrjd9x/Journal%20Summary%20.csv?dl=1&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">df2016 =<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">5</span>,]
+df2015 =<span class="st"> </span>df[<span class="dv">6</span>:<span class="dv">10</span>,]
+df2014 =<span class="st"> </span>df[<span class="dv">11</span>:<span class="dv">15</span>,]
+df2013 =<span class="st"> </span>df[<span class="dv">16</span>:<span class="dv">20</span>,]
+df2012 =<span class="st"> </span>df[<span class="dv">21</span>:<span class="dv">25</span>,]
+df2011 =<span class="st"> </span>df[<span class="dv">26</span>:<span class="dv">30</span>,]
+df2010 =<span class="st"> </span>df[<span class="dv">31</span>:<span class="dv">35</span>,]
+df2009 =<span class="st"> </span>df[<span class="dv">36</span>:<span class="dv">40</span>,]
+df2008 =<span class="st"> </span>df[<span class="dv">41</span>:<span class="dv">45</span>,]
+df2007 =<span class="st"> </span>df[<span class="dv">46</span>:<span class="dv">50</span>,]
+df2006 =<span class="st"> </span>df[<span class="dv">51</span>:<span class="dv">55</span>,]
+df2005 =<span class="st"> </span>df[<span class="dv">56</span>:<span class="dv">60</span>,]
+df2004 =<span class="st"> </span>df[<span class="dv">61</span>:<span class="dv">65</span>,]
+df2003 =<span class="st"> </span>df[<span class="dv">66</span>:<span class="dv">70</span>,]
+df2002 =<span class="st"> </span>df[<span class="dv">71</span>:<span class="dv">75</span>,]
+df2001 =<span class="st"> </span>df[<span class="dv">76</span>:<span class="dv">80</span>,]
+df2000 =<span class="st"> </span>df[<span class="dv">81</span>:<span class="dv">85</span>,]
+df1999 =<span class="st"> </span>df[<span class="dv">86</span>:<span class="dv">90</span>,]
+df1998 =<span class="st"> </span>df[<span class="dv">91</span>:<span class="dv">95</span>,]
+df1997 =<span class="st"> </span>df[<span class="dv">96</span>:<span class="dv">100</span>,]
+df1996 =<span class="st"> </span>df[<span class="dv">101</span>:<span class="dv">105</span>,]
+df1995 =<span class="st"> </span>df[<span class="dv">106</span>:<span class="dv">110</span>,]
+
+df2 =<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">110</span>,]</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">p2016 =<span class="st"> </span><span class="kw">ggplot</span>(df2016, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;2016 Journal Summary&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)
+
+p2015 =<span class="st"> </span><span class="kw">ggplot</span>(df2015, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;2015 Journal Summary&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)
+
+p2014 =<span class="st"> </span><span class="kw">ggplot</span>(df2014, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;2014 Journal Summary&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)
+
+p2013 =<span class="st"> </span><span class="kw">ggplot</span>(df2013, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;2013 Journal Summary&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)
+
+<span class="kw">grid.arrange</span>(p2016,p2015, p2014, p2013, <span class="dt">nrow =</span> <span class="dv">2</span>)</code></pre>
+<p><img src="Journal-Summary-Data_files/figure-markdown_github/2015-1.png" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r">df2 =<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">110</span>,]
+df2$Date =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;01&quot;</span>, <span class="kw">as.character</span>(df2$Date), <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>)
+df2$Date =<span class="st"> </span><span class="kw">as.Date</span>(df2$Date, <span class="dt">format =</span> <span class="st">&quot;%d-%b-%y&quot;</span>)
+<span class="kw">str</span>(df2)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    110 obs. of  5 variables:
+##  $ Year        : Factor w/ 24 levels &quot;&quot;,&quot;1995&quot;,&quot;1996&quot;,..: 23 1 1 1 1 22 1 1 1 1 ...
+##  $ Date        : Date, format: &quot;2016-09-01&quot; &quot;2016-07-01&quot; ...
+##  $ Vol         : Factor w/ 33 levels &quot;&quot;,&quot;Vo. 104&quot;,&quot;Vo. 84&quot;,..: 17 17 2 17 17 16 16 17 17 16 ...
+##  $ issue       : int  5 4 3 2 1 5 4 3 2 1 ...
+##  $ X..of.images: int  109 104 112 124 96 122 101 116 103 105 ...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">p2 =<span class="st"> </span><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;1995 - 2016 Journal Summary Data&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)+<span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">15</span>,<span class="dt">angle =</span> <span class="dv">80</span>))+<span class="kw">scale_x_date</span>(<span class="dt">date_breaks =</span> <span class="st">&quot;1 year&quot;</span>, <span class="dt">date_labels =</span> <span class="st">&quot;%b-%y&quot;</span>)+<span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>),<span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">25</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>),<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">30</span>))  
+
+p2</code></pre>
+<div class="figure">
+<img src="Journal-Summary-Data_files/figure-markdown_github/df2-1.png" />
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">df2 =<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">110</span>,]
+<span class="kw">str</span>(df2)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    110 obs. of  5 variables:
+##  $ Year        : Factor w/ 24 levels &quot;&quot;,&quot;1995&quot;,&quot;1996&quot;,..: 23 1 1 1 1 22 1 1 1 1 ...
+##  $ Date        : Factor w/ 106 levels &quot;&quot;,&quot;Jan-00&quot;,&quot;Jan-01&quot;,..: 102 38 64 59 17 80 101 37 58 16 ...
+##  $ Vol         : Factor w/ 33 levels &quot;&quot;,&quot;Vo. 104&quot;,&quot;Vo. 84&quot;,..: 17 17 2 17 17 16 16 17 17 16 ...
+##  $ issue       : int  5 4 3 2 1 5 4 3 2 1 ...
+##  $ X..of.images: int  109 104 112 124 96 122 101 116 103 105 ...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">p3 =<span class="st"> </span><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> X..of.images, <span class="dt">group =</span> <span class="dv">1</span>))+<span class="st"> </span><span class="kw">geom_line</span>()+<span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>X..of.images))+<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;1995 - 2016 Journal Summary Data&quot;</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of Images&quot;</span>)+<span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>,<span class="dt">angle =</span> <span class="dv">80</span>))+<span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> df2$Date)+<span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>),<span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">25</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>),<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">30</span>))  
+
+
+p3</code></pre>
+<div class="figure">
+<img src="Journal-Summary-Data_files/figure-markdown_github/unnamed-chunk-3-1.png" />
+</div>
